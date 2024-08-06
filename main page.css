@@ -1,0 +1,702 @@
+/* ==================== */
+/*       General        */
+/* ==================== */
+:root{
+    --white: rgb(255, 255, 255);
+    --light-blue: rgb(175, 185, 198);
+    --red: rgb(199, 0, 57 );
+    --light-background-color: rgb(51, 71, 86);
+    --background-color: rgb(8, 32, 50);
+    --dark-background-color: rgb(6, 22, 35);
+}
+* { padding: 0; margin: 0; }
+* {box-sizing:border-box;}
+*{font-family: "Chakra Petch", sans-serif;}
+html,body{
+    margin: 0 0 0 0;
+}
+body{
+    background-color: var(--background-color);
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+li {
+    display: inline-block;
+    /* You can also add some margins here to make it look prettier */
+}
+
+
+/* ==================== */
+/*    Info Bar At Top   */
+/* ==================== */
+
+.info-bar-at-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    
+    justify-content: center;
+    margin: auto;
+    max-height: 15em;
+    min-width: 30em;
+    background-color: var(--background-color);
+    align-items: center;
+    border-bottom: .2em solid rgb(236,226,208);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 8px 24px;
+    z-index: 10;
+}
+.info-bar-at-top-width-controller{
+    width: 70em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.box{
+    text-align: center;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+.page-header{
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--red);
+    text-align: center;
+}
+.box-for-nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.li-margins{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+    padding: 1em 0em 1em 0em;
+    position: relative;
+    border-bottom: .2em  solid transparent;
+}
+.li-margins:hover{
+    border-bottom: solid .2em;
+    border-color: var(--white);
+}
+.link-styles{
+    position: relative;
+    border-radius: .15em;
+    text-decoration: none;
+    padding: 1em 1em 1em 1em;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--red);
+}
+.link-styles:hover{
+    
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.extra-margin-on-right{
+    margin-right: .45em;
+}
+.extra-margin-on-left{
+    margin-left: .45em;
+}
+.to-bottom-size-controller{
+    display: none;
+}
+.to-bottom-styles-controller{
+    color: var(--white);
+}
+@media screen and (max-width: 966px) {
+    .info-bar-at-top-width-controller{
+        justify-content: center;
+    }
+}
+@media (max-width: 625px) {
+    .info-bar-at-top{
+        min-width: 5em;
+    }
+    .info-bar-at-top-width-controller{
+        justify-content: space-between;
+    }
+    .page-header{
+        font-size: 1.7rem;
+        font-weight: bolder;
+    }
+    .box-for-nav-bar{
+        display: none;
+    }
+    .drop-down-menu-controller{
+        display: none;
+        position: absolute;
+    }
+    .to-bottom-size-controller{
+        display: block;
+        position: relative;
+        background-color: var(--red);
+        width: 6.4em;
+        height: 3em;
+        margin-top: .5em;
+        margin-bottom: .5em;
+        margin-right: .5em;
+
+    }
+    .ul-styles{
+        position: absolute;
+        background-color: var(--red);
+        top: 3em;
+        display: block
+    }
+    .ul-styles li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0;
+        /* width: 6em;
+        height: 3em; */
+        background-color: var(--red);
+    }
+    .menu-button{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: var(--red);
+        color: var(--white);
+        border: none;
+        font-size: 1.5rem;
+    }
+    .to-bottom-size-controller:hover .drop-down-menu-controller,
+    .to-bottom-size-controller:focus-within .drop-down-menu-controller{
+        display: block;
+    }
+    .sub-item{
+        position: relative;
+        white-space: nowrap;
+    }
+    .sub-item:hover{
+    }
+
+    .sub-item-Styles{
+        display: block;
+        position: relative;
+        font-weight: bold;
+        width: 6.4em;
+        text-align: center;
+        line-height: 3em;
+        color: var(--white);
+        background-color: var(--red);
+        
+    }
+    .sub-item-Styles::after{
+        position: absolute;
+        content: '';
+        border-left: .2em  solid transparent;
+        top:0;left:0;right:0;bottom:0;
+        width: 100%;
+        height: 100%;
+    }
+    .sub-item:hover .sub-item-Styles::after{
+        border-left: solid .2em;
+        border-color: var(--white);
+    }
+    .sub-item-Styles:hover{
+    }
+    .extra-margin-on-right{
+        margin: 0;
+    }
+    .box{
+        margin-right: 0;
+    }
+}
+
+
+/* ==================== */
+/*     Hero Section     */
+/* ==================== */
+.header-image-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+    height: 60em;
+    overflow: hidden;
+    border-bottom: solid .2em;
+    border-color: var(--white);
+}
+.hero-text{
+    display: block;
+    z-index: 2;
+    position: absolute;
+    top: 6em;
+    padding: .4em;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--red);
+}
+.hero-text::after{
+    position: absolute;
+    content: '';
+    top:0;left:0;right:0;bottom:0;
+    width: 100%;
+    height: 100%;
+    border-bottom: .1em  solid transparent;
+}
+.hero-text:hover::after{
+    border-bottom: solid .1em;
+    border-color: var(--white);
+}
+.image-overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.664);
+    z-index: 1;
+}
+.header-image{
+    object-fit: cover;
+    transform: scale(4.3);
+}
+@media screen and (max-width: 966px) {
+    .header-image-wrapper{
+        padding-top: 10em;
+        margin: 0;
+    }
+    .hero-text{
+        top: 11em;
+    }
+}
+@media screen and (max-width: 625px) {
+    .header-image-wrapper{
+        height: 45em;
+    }
+    .hero-text{
+        font-size: clamp(1.5rem, 7vw, 4rem);
+        
+    }
+}
+
+/* ================================ */
+/*    Services Overview Section     */
+/* ================================ */
+.services-overview-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: var(--background-color);
+    max-width: 70em;
+    margin-top: 4.5em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10em;
+    justify-content: space-between;
+    vertical-align: middle;
+    padding-left: 1em;
+    padding-right: 1em;
+    overflow: hidden;
+}
+.overview-header{
+    color: var(--white);
+    height: fit-content;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 2.5rem;
+}
+.service-overview-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 24em;
+    max-height: 30em;
+    border-style: solid;
+    border-width: .2em;
+    border-radius: 2em;
+    border-color: var(--white);
+    margin-right: 1em;
+    margin-left: 1em;
+    overflow: hidden;
+}
+.automotive-img{
+    max-height: 20em;
+    background-image: url(images/key-fob.jpg);
+    background-size: auto 100%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+.commercial-img{
+    max-height: 20em;
+    background-image: url(images/Commercial-Locksmith-scaled.jpg);
+    background-size: auto 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+.residential-img{
+    max-height: 20em;
+    background-image: url(images/key\ in\ door.jpg);
+    background-size: auto 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+@media screen and (max-width: 1000px) {
+    .services-overview-container{
+        flex-direction: column;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .service-overview-wrapper{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 40em;
+        width: 100%;
+        max-height: fit-content;
+        height: auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .overview-header{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .automotive-img{
+        width: 24em;
+    }
+    .commercial-img{
+        width: 24em;
+    }
+    .residential-img{
+        width: 24em;
+    }
+}
+@media screen and (max-width: 560px){
+    .overview-header{
+        padding: 0;
+        font-size: 2rem;
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+}
+@media screen and (max-width: 460px){
+    .overview-header{
+        padding: 0;
+        font-size: 1.5rem;
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+    .automotive-img{
+        width: 22em;
+    }
+    .commercial-img{
+        width: 22em;
+    }
+    .residential-img{
+        width: 22em;
+    }
+}
+@media screen and (max-width: 360px){
+    .overview-header{
+        padding: 0;
+        font-size: 1.25rem;
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+    .automotive-img{
+        width: 20em;
+    }
+    .commercial-img{
+        width: 20em;
+    }
+    .residential-img{
+        width: 20em;
+    }
+}
+
+/* ========================= */
+/*   Services Descriptions   */
+/* ========================= */
+.services-description-box{
+    height: auto;
+    max-width: 70em;
+    width: 100%;
+    padding-top: 7.5em;
+    padding-bottom: 7.5em;
+    margin-top: 7.5em;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.locksmith-description-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 10em;
+}
+.description-image-style-automotive{
+    width: 100%;
+    background-image: url(images/key-fob.jpg);
+    background-size: auto 100%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+
+    object-fit: cover;
+    aspect-ratio: 2/1;
+    border-radius: 1em;
+    overflow: hidden;
+}
+.description-image-style-commercial{
+    width: 100%;
+    background-image: url(images/commercial-locksmith.jpg);
+    background-size: cover;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+
+    object-fit: cover;
+    aspect-ratio: 2/1;
+    border-radius: 1em;
+    overflow: hidden;
+}
+.description-image-style-residential{
+    width: 100%;
+    background-image: url(images/residential.webp);
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+
+    object-fit: cover;
+    aspect-ratio: 2/1;
+    border-radius: 1em;
+    overflow: hidden;
+}
+.text-wrapper-automotive{
+    position: absolute;
+    right: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30em;
+    margin-right: 1em;
+    margin-left: 1em;
+    background-color: var(--background-color);
+    padding: 2em;
+    border-radius: 1em;
+}
+.text-wrapper-commercial{
+    position: absolute;
+    left: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30em;
+    margin-right: 1em;
+    margin-left: 1em;
+    background-color: var(--background-color);
+    padding: 2em;
+    border-radius: 1em;
+}
+.text-wrapper-residential{
+    position: absolute;
+    right: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30em;
+    margin-right: 1em;
+    margin-left: 1em;
+    background-color: var(--background-color);
+    padding: 2em;
+    border-radius: 1em;
+}
+.services-description-style-header{
+    color: var(--red);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+}
+.services-description-style{
+    color: var(--white);
+    font-size: clamp(.75, 2vw, 2.25rem);
+}
+.services-description-style-learn-more-link{
+    color: var(--white);
+    font-size: clamp(.75, 2vw, 2.25rem);
+    text-decoration: underline;
+}
+@media screen and (max-width: 925px){
+    .locksmith-description-wrapper{
+        justify-content: center;
+    }
+    .text-wrapper-automotive{
+        top: 13em;
+        border-style: solid;
+        border-width: .2em;
+        border-top: 0;
+        border-color: var(--white);
+    }
+    .text-wrapper-commercial{
+        top: 13em;
+        border-style: solid;
+        border-width: .2em;
+        border-top: 0;
+        border-color: var(--white);
+    }
+    .automotive-locksmith-description{
+        justify-content: center;
+    }
+    .text-wrapper-residential{
+        top: 13em;
+        border-style: solid;
+        border-width: .2em;
+        border-top: 0;
+        border-color: var(--white);
+    }
+}
+@media screen and (max-width: 720px){
+    .text-wrapper-automotive{
+        right: 0;
+    }
+    .text-wrapper-commercial{
+        left: 0;
+    }
+    .text-wrapper-residential{
+        right: 0;
+    }
+}
+@media screen and (max-width: 575px){
+    .text-wrapper-automotive{
+        top: auto;
+        bottom: -7em;
+    }
+    .text-wrapper-commercial{
+        top: auto;
+        bottom: -7em;
+    }
+    .text-wrapper-residential{
+        top: auto;
+        bottom: -7em;
+    }
+}
+@media screen and (max-width: 435px){
+    .locksmith-description-wrapper{
+        margin-bottom: 15em;
+    }
+    .text-wrapper-automotive{
+        bottom: -10em;
+    }
+    .text-wrapper-commercial{
+        bottom: -10em;
+    }
+    .text-wrapper-residential{
+        bottom: -10em;
+    }
+}
+@media screen and (max-width: 350px){
+    .locksmith-description-wrapper{
+        margin-bottom: 20em;
+    }
+    .text-wrapper-automotive{
+        bottom: -15em;
+    }
+    .text-wrapper-commercial{
+        bottom: -15em;
+    }
+    .text-wrapper-residential{
+        bottom: -15em;
+    }
+}
+
+
+/* ==================== */
+/*    Bottom Section    */
+/* ==================== */
+.bottom-section{
+    width: 100%;
+    background-color: var(--dark-background-color);
+    border-top: .2em solid rgb(236,226,208);
+}
+.bottom-section-size-and-flex-container{
+    max-width: 70em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+.bottom-section-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 20em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.about-us-text{
+    font-weight: bold;
+    color: var(--white);
+}
+.footer-alignment{
+    padding-top: .25em;
+    padding-bottom: .25em;
+    width: fit-content;
+    text-align: left;
+    justify-self: left;
+    text-decoration: none;
+}
+.underline-while-hover:hover{
+    text-decoration: underline;
+}
+.contact-info-for-footer{
+    font-size: clamp(1.5rem, 9vw, 3rem);
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--red);
+    margin-bottom: .5em;
+    text-decoration: none;
+}
+.text-color{
+    font-size: clamp(.7rem, 5vw, 1.1rem);
+    font-weight: bold;
+    color: var(--white);
+}
+@media screen and (max-width: 1100px) {
+    .bottom-section-size-and-flex-container{
+        flex-direction: column;
+    }
+    .bottom-section-column{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}

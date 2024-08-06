@@ -1,0 +1,126 @@
+/* ============================== */
+/* This page has inherited styles 
+   from main page.css */
+/* ============================== */
+
+
+/* ==================== */
+/*       General        */
+/* ==================== */
+:root{
+    --white: rgb(255, 255, 255);
+    --light-blue: rgb(175, 185, 198);
+    --red: rgb(199, 0, 57 );
+    --light-background-color: rgb(51, 71, 86);
+    --background-color: rgb(8, 32, 50);
+    --dark-background-color: rgb(6, 22, 35);
+}
+* { padding: 0; margin: 0; }
+* {box-sizing:border-box;}
+*{font-family: "Chakra Petch", sans-serif;}
+html,body{
+    margin: 0 0 0 0;
+}
+body{
+    background-color: var(--background-color);
+}
+a{
+    text-decoration: none;
+}
+
+
+/* ==================== */
+/*     Hero Section     */
+/* ==================== */
+.service-header-image-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30em;
+    overflow: hidden;
+    border-bottom: solid .2em;
+    border-color: var(--white);
+}
+.hero-text{
+    display: block;
+    z-index: 2;
+    position: absolute;
+    margin: 1em;
+    text-align: center;
+    top: 5em;
+    padding: .4em;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    border-radius: .1em;
+    font-weight: bold;
+    color: var(--white);
+    background-color:var(--red);
+}
+.hero-text::after{
+    position: absolute;
+    content: '';
+    top:0;left:0;right:0;bottom:0;
+    width: 100%;
+    height: 100%;
+    border-bottom: .1em  solid transparent;
+}
+.hero-text:hover{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.hero-text:hover::after{
+    border-bottom: solid .1em;
+    border-color: var(--white);
+}
+.image-overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.664);
+    z-index: 1;
+}
+.service-header-image{
+    position: absolute;
+    object-position: left top;
+    top: 0;
+    margin-right: 18em;
+    object-fit: cover;
+}
+@media screen and (max-width: 966px) {
+    .header-image-wrapper{
+        padding-top: 10em;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 625px) {
+    .header-image-wrapper{
+        padding-top: 3em;
+    }
+}
+
+
+/* ============================================= */
+/*     Services Description And Pricing table    */
+/* ============================================= */
+.pricing-table-header{
+    color: var(--red);
+    margin-bottom: .25em;
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+}
+.pricing-table{
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 40em;
+}
+.tb-styles{
+    border: solid .1em;
+    border-color: var(--white);
+    padding: .5em;
+    height: 2.5em;
+    width: 45em;
+    color: var(--white);
+    text-align: center;
+}
