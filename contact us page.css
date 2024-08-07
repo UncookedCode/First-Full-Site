@@ -36,6 +36,12 @@
     linear-gradient(#000 0 0) content-box;
     transition: .25s;
 }
+.wrapper-for-flex{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    position: relative;
+}
 .about-us-paragraph{
     display: inline;
     float: left;
@@ -44,16 +50,24 @@
     font-size: clamp(.75rem, 7vw, 1.5rem);
     color: var(--white);
 }
+.p1-margin-controller{
+    margin: .5em .5em .0em .5em;
+}
+.p2-margin-controller{
+    margin: .0em .5em .5em .5em;
+}
 .about-us-img{
     border-radius: 1em;
     margin: .5em .5em .5em .5em;
     width: 10em;
+    height: 10em;
     aspect-ratio: 1/1;
-    float: right;   
 }
-@media screen and (max-width: 530px) {
-    .about-us-img{
-        width: 13em;
+@media screen and (max-width: 850px) {    
+    .wrapper-for-flex{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 @media screen and (max-width: 460px) {
