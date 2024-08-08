@@ -73,6 +73,7 @@
 @media screen and (max-width: 460px) {
     .about-us-img{
         width: 10em;
+        height: 10em;
     }
 }
 @media screen and (max-width: 425px) {
