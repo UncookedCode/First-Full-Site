@@ -59,8 +59,8 @@
 .about-us-img{
     border-radius: 1em;
     margin: .5em .5em .5em .5em;
-    width: 10em;
-    height: 10em;
+    width: 15em;
+    height: 15em;
     aspect-ratio: 1/1;
 }
 @media screen and (max-width: 850px) {    
