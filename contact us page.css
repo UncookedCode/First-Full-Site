@@ -16,10 +16,9 @@
 .about-us-container{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 80em;
     border-radius: 1em;
     margin: 3em 2em 2em 2em;
     padding: 2em 2em 2em 2em;
@@ -45,16 +44,18 @@
 .about-us-paragraph{
     display: inline;
     float: left;
+    line-height: 1.6;
     margin: .5em .5em .5em .5em;
-    max-width: 50em;
     font-size: clamp(.75rem, 7vw, 1.5rem);
     color: var(--white);
 }
 .p1-margin-controller{
     margin: .5em .5em .0em .5em;
+    max-width: 20em;
 }
 .p2-margin-controller{
     margin: .0em .5em .5em .5em;
+    max-width: 31em;
 }
 .about-us-img{
     border-radius: 1em;
@@ -68,6 +69,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .p1-margin-controller{
+        max-width: 31em;
     }
 }
 @media screen and (max-width: 460px) {

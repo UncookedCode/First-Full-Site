@@ -40,7 +40,6 @@ li {
     left: 0;
     right: 0;
     display: flex;
-    
     justify-content: center;
     margin: auto;
     max-height: 15em;
@@ -540,8 +539,10 @@ li {
 .services-description-style-header{
     color: var(--red);
     font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.1;
 }
 .services-description-style{
+    line-height: 1.6;
     color: var(--white);
     font-size: clamp(.75, 2vw, 2.25rem);
 }
@@ -664,6 +665,7 @@ li {
 }
 
 .about-us-text{
+    line-height: 1.6;
     font-weight: bold;
     color: var(--white);
 }
